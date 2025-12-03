@@ -5,6 +5,9 @@ buildscript {
         mavenLocal()
         google()
         mavenCentral()
+        maven {
+            url = uri("https://maven.mozilla.org/")
+        }
     }
     dependencies {
         classpath("com.android.tools.build:gradle:8.13.0")
@@ -22,6 +25,7 @@ allprojects {
         google()
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
+        maven { setUrl("https://maven.mozilla.org/") }
     }
 }
 
