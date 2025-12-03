@@ -1,0 +1,35 @@
+name: Build ARMv7 APK
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-armv7-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build release APK (includes armeabi-v7a)
+        run: ./gradlew :app:assembleRelease --stacktrace
+
+      - name: Upload ARMv7 APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: armv7-apk
+          path: app/build/outputs/apk/release/*.apk
