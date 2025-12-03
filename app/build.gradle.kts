@@ -61,7 +61,7 @@ android {
         abi {
             isEnable = true
             reset()
-            include("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+            include("armeabi-v7a")
             isUniversalApk = false
         }
     }
@@ -118,8 +118,8 @@ dependencies {
     implementation("de.halfbit:pinned-section-listview:1.0.0")
 
     // https://maven.mozilla.org/?prefix=maven2/org/mozilla/geckoview/
-    val geckoviewVersion = "143.0.20250923200700"
-    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:$geckoviewVersion")
+    val geckoviewVersion = "143.0.20250922120053"
+    implementation("org.mozilla.geckoview:geckoview-armeabi-v7a:$geckoviewVersion")
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.robolectric:robolectric:4.15.1")

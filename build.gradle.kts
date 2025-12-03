@@ -6,7 +6,7 @@ buildscript {
         google()
         mavenCentral()
         maven {
-            url = uri("https://maven.mozilla.org/")
+            url = uri("https://maven.mozilla.org/maven2/")
         }
     }
     dependencies {
@@ -25,7 +25,7 @@ allprojects {
         google()
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
-        maven { setUrl("https://maven.mozilla.org/") }
+        maven { setUrl("https://maven.mozilla.org/maven2/") }
     }
 }
 
