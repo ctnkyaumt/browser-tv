@@ -61,7 +61,6 @@ class GeckoWebEngine(val tab: WebTabState): WebEngine {
             if (!this::runtime.isInitialized) {
                 val builder = GeckoRuntimeSettings.Builder()
                 builder.aboutConfigEnabled(true)
-                    .accessibilityEnabled(false)
                     .allowInsecureConnections(GeckoRuntimeSettings.HTTPS_ONLY)
                     .cacheEnabled(false)
                     .configFilePath("")
