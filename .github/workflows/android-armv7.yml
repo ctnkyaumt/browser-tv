@@ -25,11 +25,11 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
-      - name: Build release APK (includes armeabi-v7a)
-        run: ./gradlew :app:assembleRelease --stacktrace
+      - name: Build debug APK (armeabi-v7a)
+        run: ./gradlew :app:assembleDebug --stacktrace
 
       - name: Upload ARMv7 APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: armv7-apk
-          path: app/build/outputs/apk/release/*.apk
+          name: armv7-apk-debug
+          path: app/build/outputs/apk/debug/*.apk
